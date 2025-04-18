@@ -16,7 +16,7 @@ class StorageJson(IStorage):
         with open(self.file_path, "r") as file_obj:
             data = json.load(file_obj)
             if title in data:
-                raise ValueError(f"Movie '{title}' already exists.")
+                raise ValueError(f"The entry '{title}' already exists.")
             else:
                 data[title] = {
                 "year": year,
@@ -44,7 +44,7 @@ class StorageJson(IStorage):
         with open(self.file_path, "r") as file_obj:
             data = json.load(file_obj)
             if title not in data:
-                raise ValueError(f"Movie '{title}' doesn't exist.")
+                raise ValueError(f"The entry '{title}' doesn't exist.")
             else:
                 data[title]["rating"] = rating
 

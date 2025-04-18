@@ -1,3 +1,6 @@
+import tmdb_client
+
+
 class MovieApp:
     def __init__(self, storage):
         self._storage = storage
@@ -19,16 +22,50 @@ class MovieApp:
         if title in movies:
             print(f"Movie {title} already exist!")
             return
-        try:
-            year = int(input("Enter movie year: "))
-            rating = float(input("Enter movie rating: "))
-        except ValueError:
-            print("That's not going to work! We are going to need a whole number for year and the rating must be "
-                  "entered like this for example '7.0' or '8.5'")
+
+        search_results = tmdb_client.search_movies_by_title(title)
+        if not search_results:
+            print(f"No matches found for {title}, please try another.")
             return
-        poster = input("Type or paste the movie poster url: ").strip()
-        if not poster:
-            poster = "https://bit.ly/3Kf5e2L"
+        options = []
+        for index, movie in enumerate(search_results, start=1):
+            title = movie['title']
+            year = movie.get('release_date')
+            if year:
+                year = year[:4]
+            rating = movie.get('vote_average')
+            if not rating:
+                rating = 5
+            poster = movie.get('poster_path')
+            if not poster:
+                poster = "https://bit.ly/3Kf5e2L"
+            options.append({
+                "index": index,
+                "title": title,
+                "year": year,
+                "rating": rating,
+                "poster": poster
+            })
+        for option in options:
+            print(f"{option['index']}. {option['title']} ({option['year']}) - Rating: {option['rating']}")
+
+        try:
+            user_selection = int(input("Please enter the number of the title you would like to add: "))
+        except ValueError:
+            print ("That's not going to work, we need a number listed")
+            return
+
+        try:
+            selected_movie = options[user_selection -1]
+
+        except IndexError:
+            print("That's not going to work, we need a number listed")
+            return
+
+        title = selected_movie['title']
+        year = selected_movie['year']
+        rating = selected_movie['rating']
+        poster = selected_movie['poster']
 
         self._storage.add_movie(title, year, rating, poster)
         print(f"Movie {title} successfully added")
