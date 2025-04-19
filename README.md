@@ -10,7 +10,7 @@ This is a Python-based movie management app that integrates with the [TMDb API](
 - ✅ Load movie data from TMDb, including title, year, rating, and poster
 - ✅ Support for multiple storage backends (`JSON`, `CSV`)
 - ✅ Generate modern 4-column HTML output using Roboto font
-- 🔜 Link each movie to its IMDb page
+- ✅ Link each movie to its IMDb page
 - 🔜 Add filters/sorting (rating, release year, genre)
 
 ---
