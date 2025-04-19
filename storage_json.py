@@ -1,5 +1,7 @@
-from istorage import IStorage
 import json
+
+from istorage import IStorage
+
 
 class StorageJson(IStorage):
     def __init__(self, file_path):
@@ -11,7 +13,7 @@ class StorageJson(IStorage):
             data = json.load(file_obj)
             return data
 
-    def add_movie(self, title, year, rating, poster):
+    def add_movie(self, title, year, rating, poster, imdb_url=None):
         """Adds a movie to storage"""
         with open(self.file_path, "r") as file_obj:
             data = json.load(file_obj)
@@ -19,14 +21,14 @@ class StorageJson(IStorage):
                 raise ValueError(f"The entry '{title}' already exists.")
             else:
                 data[title] = {
-                "year": year,
-                "rating": rating,
-                "poster": poster
-            }
+                    "year": year,
+                    "rating": rating,
+                    "poster": poster,
+                    "imdb_url": imdb_url or ""
+                }
 
         with open(self.file_path, "w") as file_obj:
             json.dump(data, file_obj)
-
 
     def delete_movie(self, title):
         """Deletes a movie by title."""

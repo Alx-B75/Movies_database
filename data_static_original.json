@@ -1,1 +1,63 @@
-{"The Shawshank Redemption": {"year": 1994, "rating": 9.5}, "Pulp Fiction": {"year": 1994, "rating": 8.8}, "The Room": {"year": 2003, "rating": 3.6}, "The Godfather": {"year": 1972, "rating": 9.2}, "The Godfather: Part II": {"year": 1974, "rating": 9.0}, "The Dark Knight": {"year": 2008, "rating": 9.0}, "12 Angry Men": {"year": 1957, "rating": 8.9}, "Everything Everywhere All At Once": {"year": 2022, "rating": 8.9}, "Forrest Gump": {"year": 1994, "rating": 8.8}, "Star Wars: Episode V": {"year": 1980, "rating": 8.7}, "Bill and Teds Excellent Adventure": {"year": "1987", "rating": "8"}, "Interstellar": {"year": 2014, "rating": 9.9, "poster": "http://poster.url"}}
+{
+  "Squid Game: Fireplace": {
+    "year": "2024",
+    "rating": 6.139,
+    "poster": "/cIIMvxLztRs1MbXH0oqaw3SGV0q.jpg"
+  },
+  "Big Guns Talk: The Story of the Western": {
+    "year": "1997",
+    "rating": 5,
+    "poster": "/3SfMyEi0N1A7spttIGdmDGn4fgO.jpg"
+  },
+  "The Guns of Navarone": {
+    "year": "1961",
+    "rating": 7.308,
+    "poster": "/j6VSFnm20GlkUi8yb7hM5Qfc1fA.jpg"
+  },
+  "Star Wars": {
+    "year": "1977",
+    "rating": 8.203,
+    "poster": "/6FfCtAuVAW8XJjZ7eWeLibRLWTw.jpg"
+  },
+  "Solo!": {
+    "year": "2025",
+    "rating": 5,
+    "poster": "/r8C1P6QplHq6qd8KyHLx9Z4ZVfN.jpg"
+  },
+  "Blades of Glory": {
+    "year": "2007",
+    "rating": 6.11,
+    "poster": "/xmwxSvRAi6ojxk1snwHSUogmDsv.jpg",
+    "imdb_url": "https://www.imdb.com/title/tt0445934/"
+  },
+  "The Hobbit: An Unexpected Journey": {
+    "year": "2012",
+    "rating": 7.358,
+    "poster": "/yHA9Fc37VmpUA5UncTxxo3rTGVA.jpg",
+    "imdb_url": "https://www.imdb.com/title/tt0903624/"
+  },
+  "The Shawshank Redemption": {
+    "year": "1994",
+    "rating": 8.708,
+    "poster": "/9cqNxx0GxF0bflZmeSMuL5tnGzr.jpg",
+    "imdb_url": "https://www.imdb.com/title/tt0111161/"
+  },
+  "The Empire Strikes Back": {
+    "year": "1980",
+    "rating": 8.392,
+    "poster": "/nNAeTmF4CtdSgMDplXTDPOpYzsX.jpg",
+    "imdb_url": "https://www.imdb.com/title/tt0080684/"
+  },
+  "Batman (1989)": {
+    "year": "1989",
+    "rating": 7.232,
+    "poster": "/cij4dd21v2Rk2YtUQbV5kW69WB2.jpg",
+    "imdb_url": "https://www.imdb.com/title/tt0096895/"
+  },
+  "Batman v Superman: Dawn of Justice (2016)": {
+    "year": "2016",
+    "rating": 6.0,
+    "poster": "/5UsK3grJvtQrtzEgqNlDljJW96w.jpg",
+    "imdb_url": "https://www.imdb.com/title/tt2975590/"
+  }
+}

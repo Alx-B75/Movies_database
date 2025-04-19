@@ -1,5 +1,5 @@
-import json
 import csv
+import json
 
 # Update with your actual JSON file name
 with open("data_static_original.json", "r") as json_file:

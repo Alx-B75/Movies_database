@@ -1,5 +1,6 @@
 from abc import ABC, abstractmethod
 
+
 class IStorage(ABC):
     @abstractmethod
     def list_movies(self):
@@ -10,7 +11,7 @@ class IStorage(ABC):
         """ Adds a movie to storage """
 
     @abstractmethod
-    def delete_movie(self,title):
+    def delete_movie(self, title):
         """Deletes a movie by title."""
         pass
 

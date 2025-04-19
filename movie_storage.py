@@ -1,7 +1,4 @@
-import os
 import json
-from csv import excel
-from os import write
 
 
 def get_movies():
@@ -35,8 +32,7 @@ def save_movies(movies):
     Gets all your movies as an argument and saves them to the JSON file.
     """
     with open("data_static_original.json", "w") as fileobj:
-            json.dump(movies, "data_static_original.json", indent=4)
-
+        json.dump(movies, "data_static_original.json", indent=4)
 
 
 def add_movie(title, year, rating):
@@ -58,10 +54,8 @@ def add_movie(title, year, rating):
 
     movies[title] = new_movie
 
-
     with open("data_static_original.json", "w") as fileobj:
         json.dump(movies, fileobj, indent=4)
-
 
 
 def delete_movie(title):
@@ -94,4 +88,3 @@ def update_movie(title, rating):
 
     with open("data_static_original.json", "w") as fileobj:
         json.dump(movies, fileobj, indent=4)
-

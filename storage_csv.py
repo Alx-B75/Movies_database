@@ -1,7 +1,7 @@
-from convert_json_to_csv import writer
-from istorage import IStorage
 import csv
-import os
+
+from istorage import IStorage
+
 
 class StorageCsv(IStorage):
     def __init__(self, file_path):
@@ -21,21 +21,20 @@ class StorageCsv(IStorage):
                 }
             return movie_list
 
-
     def add_movie(self, title, year, rating, poster):
         """Adds a new movie to the CSV file."""
         movie_list = self.list_movies()
 
         if title in movie_list:
-           raise ValueError(f"Movie '{title}' already exists.")
+            raise ValueError(f"Movie '{title}' already exists.")
 
         with open(self.file_path, "a", newline='') as file:
             writer = csv.DictWriter(file, fieldnames=["title", "rating", "year", "poster"])
             writer.writerow({"title": title,
-            "rating": rating,
-            "year": year,
-            "poster": poster
-            })
+                             "rating": rating,
+                             "year": year,
+                             "poster": poster
+                             })
 
     def delete_movie(self, title):
         """Deletes a movie from the CSV file by title."""
@@ -45,7 +44,7 @@ class StorageCsv(IStorage):
             raise ValueError(f"Movie '{title}' not found.")
 
         with open(self.file_path, "w", newline='') as file:
-            writer = csv.DictWriter(file, fieldnames=["title", "rating", "year", "poster"])
+            writer = csv.DictWriter(file, fieldnames=["title", "rating", "year", "poster", "imdb_url"])
             writer.writeheader()
 
             for movie_title, details in movie_list.items():
@@ -54,7 +53,8 @@ class StorageCsv(IStorage):
                         "title": movie_title,
                         "rating": details["rating"],
                         "year": details["year"],
-                        "poster": details["poster"]
+                        "poster": details["poster"],
+                        "imdb_url": details.get("imdb_url", "")
                     })
 
     def update_movie(self, title, rating):
@@ -75,7 +75,6 @@ class StorageCsv(IStorage):
                     "title": movie_title,
                     "rating": details["rating"],
                     "year": details["year"],
-                    "poster": details["poster"]
+                    "poster": details["poster"],
+                    "imdb_url": details.get("imdb_url", "")
                 })
-
-
